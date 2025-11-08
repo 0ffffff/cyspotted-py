@@ -2,3 +2,5 @@
 .DS_Store
 spottedDB.json
 spotterDB.json
+__pycache__/*
+__pycache__
