@@ -1,7 +1,7 @@
 from db import spottedDB, spotterDB, Query
-from main import client
+#from main import client
 
-def handle_message(event):
+def handle_msg(event, client):
     channel_id = event.get('channel')
     user = event.get('user')
     text = event.get('text')
@@ -29,6 +29,7 @@ def handle_message(event):
                      "`leaderboard` - Show the leaderboard of spotted users")
         client.chat_postMessage(channel=channel_id, text=help_text)
     elif text and text.lower() == '!leaderboard':
+        
         #too lazy to implement leaderboard logic rn
         leaderboard_text = "Leaderboard feature coming soon!"
         client.chat_postMessage(channel=channel_id, text=leaderboard_text)
