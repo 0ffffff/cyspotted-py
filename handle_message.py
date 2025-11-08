@@ -25,8 +25,8 @@ def handle_msg(event, client):
     #add other commands, help and leaderboard
     elif text and text.lower() == '!help':
         help_text = ("*CySpotted Commands:*\n"
-                     "`help` - Show this help message\n"
-                     "`leaderboard` - Show the leaderboard of spotted users")
+                     "`!help` - Show this help message\n"
+                     "`!leaderboard` - Show the leaderboard of spotted users")
         client.chat_postMessage(channel=channel_id, text=help_text)
     elif text and text.lower() == '!leaderboard':
         
