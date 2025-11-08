@@ -1,2 +1,4 @@
 .env
 .DS_Store
+spottedDB.json
+spotterDB.json
