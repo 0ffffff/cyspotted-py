@@ -1,4 +1,4 @@
-from db import spottedDB, spotterDB, Query
+from db import spottedDB, spotterDB, User
 from tinydb.operations import increment
 
 def handle_msg(event, client):
@@ -6,8 +6,6 @@ def handle_msg(event, client):
     user = event.get('user')
     text = event.get('text')
     has_image = bool(event.get('files'))
-
-    User = Query()
 
     #if message contains mention of another user: log mentioned user as spotted in db, react with a check emoji
     if text and '<@' in text and has_image:
