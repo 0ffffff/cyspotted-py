@@ -19,7 +19,9 @@ def handle_msg(event, client):
                 spotterDB.insert({'user_id': user, 'count': 1})
             elif not spottedDB.contains(User.user_id == mentioned_user_id):
                 spottedDB.insert({'user_id': mentioned_user_id, 'count': 1})
+                spotterDB.update(increment('count'), User.user_id == user)
             elif not spotterDB.contains(User.user_id == user):
+                spottedDB.update(increment('count'), User.user_id == mentioned_user_id)
                 spotterDB.insert({'user_id': user, 'count': 1})
             else:
                 spottedDB.update(increment('count'), User.user_id == mentioned_user_id)
