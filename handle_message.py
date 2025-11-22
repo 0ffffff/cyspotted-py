@@ -67,3 +67,8 @@ def handle_msg(event, client):
             leaderboard_text += f"<@{entry['user_id']}> - {entry['count']} catches\n"
 
         client.chat_postMessage(channel=channel_id, text=leaderboard_text)
+
+    elif text and text.lower() == '!coinflip':
+        import secrets
+        coin_flip = secrets.choice(['Heads', 'Tails'])
+        client.chat_postMessage(channel=channel_id, text=f"Your result is: {coin_flip}")
